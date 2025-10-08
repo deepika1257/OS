@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char data[50];
+
+    // Create and write
+    fp = fopen("demo.txt", "w");
+    fprintf(fp, "This is a test file.\n");
+    fclose(fp);
+
+    // Read
+    fp = fopen("demo.txt", "r");
+    printf("File Content:\n");
+    while(fgets(data, sizeof(data), fp))
+        printf("%s", data);
+    fclose(fp);
+
+    // Append
+    fp = fopen("demo.txt", "a");
+    fprintf(fp, "Adding a new line.\n");
+    fclose(fp);
+
+    printf("\nFile operations completed.\n");
+    return 0;
+}
+
+
+sample output:
+File Content:
+This is a test file.
+File operations completed.

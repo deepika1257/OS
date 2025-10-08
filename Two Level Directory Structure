@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+struct {
+    char dname[10], fname[10][10];
+    int fcount;
+} dir[2];
+
+int main() {
+    int i, j;
+    strcpy(dir[0].dname, "CSE");
+    dir[0].fcount = 2;
+    strcpy(dir[0].fname[0], "os.c");
+    strcpy(dir[0].fname[1], "ds.c");
+
+    strcpy(dir[1].dname, "ECE");
+    dir[1].fcount = 2;
+    strcpy(dir[1].fname[0], "edc.c");
+    strcpy(dir[1].fname[1], "signals.c");
+
+    for(i=0;i<2;i++) {
+        printf("\nDirectory: %s\n", dir[i].dname);
+        for(j=0;j<dir[i].fcount;j++)
+            printf("File %d: %s\n", j+1, dir[i].fname[j]);
+    }
+    return 0;
+}
+
+
+sample output:
+Directory: CSE
+File 1: os.c
+File 2: ds.c
+
+Directory: ECE
+File 1: edc.c
+File 2: signals.c

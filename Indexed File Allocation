@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int indexBlock = 4;
+    int blocks[] = {5, 9, 13, 16};
+    int n = 4;
+
+    printf("Index Block: %d\n", indexBlock);
+    for(int i=0;i<n;i++)
+        printf("Block %d -> %d\n", indexBlock, blocks[i]);
+    return 0;
+}
+
+
+sample output:
+Index Block: 4
+Block 4 -> 5
+Block 4 -> 9
+Block 4 -> 13
+Block 4 -> 16

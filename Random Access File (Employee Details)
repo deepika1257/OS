@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Employee {
+    int id;
+    char name[20];
+    float salary;
+};
+
+int main() {
+    struct Employee e1 = {101, "Alice", 50000}, e2;
+    FILE *fp = fopen("employee.dat", "wb+");
+
+    fwrite(&e1, sizeof(e1), 1, fp);
+    fseek(fp, 0, SEEK_SET);
+    fread(&e2, sizeof(e2), 1, fp);
+
+    printf("Employee Details:\n");
+    printf("ID: %d\nName: %s\nSalary: %.2f\n", e2.id, e2.name, e2.salary);
+    fclose(fp);
+    return 0;
+}
+
+
+sample output:
+Employee Details:
+ID: 101
+Name: Alice
+Salary: 50000.00

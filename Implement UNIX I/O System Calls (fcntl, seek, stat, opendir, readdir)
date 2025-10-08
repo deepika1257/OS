@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <sys/stat.h>
+
+int main() {
+    int fd;
+    struct stat s;
+    DIR *d;
+    struct dirent *de;
+
+    fd = open("sample.txt", O_CREAT | O_RDWR, 0777);
+    write(fd, "File Test Data", 14);
+    close(fd);
+
+    stat("sample.txt", &s);
+    printf("File Size: %ld bytes\n", s.st_size);
+
+    d = opendir(".");
+    printf("Files in current directory:\n");
+    while((de = readdir(d)) != NULL)
+        printf("%s\n", de->d_name);
+    closedir(d);
+    return 0;
+}
+
+
+sample output:
+File Size: 14 bytes
+Files in current directory:
+.
+..
+sample.txt
+a.exe
+main.c

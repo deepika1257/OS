@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int start = 5, length = 3;
+    printf("Sequential File Allocation:\n");
+    for(int i=0;i<length;i++)
+        printf("Block %d allocated\n", start + i);
+    return 0;
+}
+
+
+sample output:
+Sequential File Allocation:
+Block 5 allocated
+Block 6 allocated
+Block 7 allocated

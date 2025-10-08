@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    printf("File Access Permissions in Linux:\n");
+    printf("r -> Read permission\n");
+    printf("w -> Write permission\n");
+    printf("x -> Execute permission\n\n");
+
+    printf("User Types:\n");
+    printf("Owner - File creator\n");
+    printf("Group - Users in same group\n");
+    printf("Others - All remaining users\n");
+
+    printf("\nExample: -rwxr-xr--\n");
+    printf("Owner: rwx (read, write, execute)\n");
+    printf("Group: r-x (read, execute)\n");
+    printf("Others: r-- (read only)\n");
+    return 0;
+}
+
+
+sample output:
+File Access Permissions in Linux:
+r -> Read permission
+w -> Write permission
+x -> Execute permission
+
+User Types:
+Owner - File creator
+Group - Users in same group
+Others - All remaining users
+
+Example: -rwxr-xr--
+Owner: rwx (read, write, execute)
+Group: r-x (read, execute)
+Others: r-- (read only)
